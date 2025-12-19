@@ -1,3 +1,4 @@
+
 import React from 'react';
 import type { WaveOptions, AIEmotion } from './types';
 
@@ -36,6 +37,18 @@ export const EMOTION_STYLES: Record<AIEmotion, Partial<WaveOptions>> = {
     amplitude: 30, frequency: 15, speed: 0.08, 
     color1: '#6b7280', color2: '#3b82f6', background: '#111827' 
   },
+  curious: {
+    amplitude: 70, frequency: 60, speed: 0.2,
+    color1: '#22d3ee', color2: '#818cf8', background: '#082f49'
+  },
+  contemplative: {
+    amplitude: 25, frequency: 80, speed: 0.05,
+    color1: '#a5b4fc', color2: '#6366f1', background: '#020617'
+  },
+  playful: {
+    amplitude: 90, frequency: 25, speed: 0.3,
+    color1: '#f472b6', color2: '#fbbf24', background: '#2e1065'
+  }
 };
 
 

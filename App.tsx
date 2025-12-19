@@ -81,7 +81,7 @@ const App: React.FC = () => {
   const analyzeAndSetEmotion = useCallback(async (text: string) => {
     if (!aiRef.current || !text) return;
     try {
-      const prompt = `Analyze the sentiment of the following text and classify it into one of these categories: "neutral", "calm", "happy", "excited", "angry", "sad". Respond with only the category name in lowercase and nothing else. Text: "${text}"`;
+      const prompt = `Analyze the sentiment of the following text and classify it into one of these categories: "neutral", "calm", "happy", "excited", "angry", "sad", "curious", "contemplative", "playful". Respond with only the category name in lowercase and nothing else. Text: "${text}"`;
 
       const response = await aiRef.current.models.generateContent({
         model: 'gemini-2.5-flash',
@@ -89,7 +89,7 @@ const App: React.FC = () => {
         config: { temperature: 0 },
       });
       
-      const emotionResult = response.text.trim() as AIEmotion;
+      const emotionResult = response.text.trim().toLowerCase() as AIEmotion;
       if (Object.keys(EMOTION_STYLES).includes(emotionResult)) {
         setAIEmotion(emotionResult);
       } else {

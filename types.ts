@@ -11,7 +11,7 @@ export interface WaveOptions {
 
 export type AIState = 'idle' | 'thinking' | 'speaking';
 
-export type AIEmotion = 'neutral' | 'calm' | 'happy' | 'excited' | 'angry' | 'sad';
+export type AIEmotion = 'neutral' | 'calm' | 'happy' | 'excited' | 'angry' | 'sad' | 'curious' | 'contemplative' | 'playful';
 
 export interface ChatMessage {
   sender: 'user' | 'ai';
